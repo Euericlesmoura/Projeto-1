@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.1.1">
+  <diagram name="Página-1" id="wbIcbg5kXDUll0MbyDtw">
+    <mxGraphModel dx="1442" dy="962" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="V08loC4SVRI70p_X_-qo-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-2" target="V08loC4SVRI70p_X_-qo-33" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-2" value="Pedido" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="120" y="-40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-5" value="Item do Pedido" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="120" y="200" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-7" target="V08loC4SVRI70p_X_-qo-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-7" target="V08loC4SVRI70p_X_-qo-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-7" value="tem" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="130" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-18" target="V08loC4SVRI70p_X_-qo-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-18" target="V08loC4SVRI70p_X_-qo-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-18" value="possui" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="320" y="200" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-20" value="Produto" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="520" y="200" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-24" target="V08loC4SVRI70p_X_-qo-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-24" target="V08loC4SVRI70p_X_-qo-39" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-24" value="Cliente" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-280" y="-40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-25" target="V08loC4SVRI70p_X_-qo-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-25" value="faz" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-80" y="-40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-28" target="V08loC4SVRI70p_X_-qo-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-28" value="Pagamento" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="120" y="-240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-29" target="V08loC4SVRI70p_X_-qo-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-29" value="tem" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="130" y="-140" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-32" target="V08loC4SVRI70p_X_-qo-33" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-32" value="Categoria" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="520" y="-40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-33" value="tem" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="340" y="-40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="V08loC4SVRI70p_X_-qo-37" target="V08loC4SVRI70p_X_-qo-39" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-37" value="Endereço de Entrega" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-280" y="200" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V08loC4SVRI70p_X_-qo-39" value="tem" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-270" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
