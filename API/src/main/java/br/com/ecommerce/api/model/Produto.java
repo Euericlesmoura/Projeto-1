@@ -31,7 +31,7 @@ public class Produto {
     @Column(name = "imagem_url", length = Integer.MAX_VALUE)
     private String imagemUrl;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_categoria", nullable = false)
     private Categoria idCategoria;
 

@@ -11,6 +11,7 @@ public class ClienteService {
 
     //Injeção de Dependência
     //Falar que Service depende de alguém
+    //final - significa que é constante
     private final ClienteRepository clienteRepository;
 
     public ClienteService(ClienteRepository repo) {
