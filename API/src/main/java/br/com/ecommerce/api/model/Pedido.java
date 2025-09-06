@@ -17,7 +17,7 @@ public class Pedido {
     @Column(name = "id_pedido", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente idCliente;
 
@@ -30,7 +30,7 @@ public class Pedido {
     @Column(name = "status", nullable = false, length = Integer.MAX_VALUE)
     private String status;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_endereco", nullable = false)
     private EnderecoDeEntrega idEndereco;
 

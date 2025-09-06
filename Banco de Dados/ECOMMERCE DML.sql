@@ -21,6 +21,7 @@ VALUES
 ('RENATO CARVALHO ALVES', 'RENATO.ALVES@EXAMPLE.COM', 'RENATO#111', '(91) 97654-4433', '2025-01-30 10:15:00'),
 ('SABRINA LIMA TORRES', 'SABRINA.TORRES@EXAMPLE.COM', 'SABRINA123', '(31) 93456-7788', '2024-06-22 16:45:00');
 
+
 INSERT INTO ecommerce.categoria (nome_categoria, descricao) 
 VALUES
 ('Eletrônicos', 'Produtos eletrônicos como celulares, computadores e acessórios.'),
@@ -38,6 +39,7 @@ VALUES
 ('Casa e Cozinha', 'Utensílios domésticos, eletrodomésticos e artigos para cozinha.'),
 ('Papelaria', 'Materiais de escritório, escolar e papelaria em geral.'),
 ('Telefonia', 'Aparelhos telefônicos, smartphones e acessórios relacionados.');
+
 
 SELECT * FROM ECOMMERCE.CATEGORIA
 
@@ -103,6 +105,7 @@ VALUES
 
 SELECT * FROM ECOMMERCE.CLIENTE
 
+
 INSERT INTO ecommerce.endereco_de_entrega (id_cliente, logradouro, numero, complemento, bairro, cidade, estado, cep) 
 VALUES
 (1, 'Rua das Flores', 123, 'Apto 101', 'Jardim Primavera', 'São Paulo', 'SP', '01001-000'),
@@ -126,3 +129,37 @@ VALUES
 (19, 'Rua das Laranjeiras', 457, 'Casa', 'Laranjeiras', 'Rio de Janeiro', 'RJ', '22240-180'),
 (20, 'Avenida Ipiranga', 568, '', 'Centro', 'Porto Alegre', 'RS', '90020-190');
 
+
+INSERT INTO ECOMMERCE.PEDIDO(ID_CLIENTE, DATA_PEDIDO, VALOR_TOTAL, STATUS, ID_ENDERECO) 
+VALUES
+(3, '2025-08-28 14:23:00', 139.90, 'Processando', 22),
+(7, '2025-08-29 09:15:00', 397.50, 'Pendente', 23),
+(1, '2025-08-30 17:45:00', 3299.00, 'Cancelado',24),
+(15, '2025-08-31 12:30:00', 2048.9, 'Enviado', 25),
+(9, '2025-09-01 11:00:00', 349.80, 'Enviado', 26),
+(12, '2025-09-01 16:10:00', 249.60, 'Entregue', 27);
+
+SELECT * FROM ECOMMERCE.ENDERECO_DE_ENTREGA
+
+
+INSERT INTO ECOMMERCE.ITEM_DO_PEDIDO(ID_PEDIDO, ID_PRODUTO, QUANTIDADE)
+VALUES
+(24, 1, 1),
+(25, 4, 5),
+(26, 7, 1),
+(27, 8, 1),
+(28, 6, 1),
+(29, 11, 1);
+
+
+SELECT * FROM ECOMMERCE.PEDIDO
+
+
+INSERT INTO ECOMMERCE.PAGAMENTO (ID_PEDIDO, FORMA_PAGAMENTO, STATUS, DATA_PAGAMENTO)
+VALUES
+(24, 'Cartão de Crédito', 'Aprovado', '2025-09-01 11:00:00'),
+(25, 'Boleto Bancário', 'Pendente', '2025-09-02 12:00:00'),
+(26, 'Pix', 'Aprovado', '2025-09-03 13:00:00'),
+(27, 'Cartão de Débito', 'Pendente', '2025-09-04 14:30:00'),
+(28, 'Cartão de Crédito', 'Aprovado', '2025-09-05 16:30:00'),
+(29, 'Boleto Bancário', 'Pendente', '2025-09-06 17:00:00');
