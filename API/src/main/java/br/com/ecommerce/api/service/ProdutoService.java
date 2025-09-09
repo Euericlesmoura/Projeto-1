@@ -22,4 +22,10 @@ public class ProdutoService {
     public List<Produto> listarTodos() {
         return produtoRepository.findAll();
     }
+
+    //Metodo Cadastrar
+    public Produto cadastrarProduto (Produto prod) {
+
+        return produtoRepository.save(prod);
+    }
 }

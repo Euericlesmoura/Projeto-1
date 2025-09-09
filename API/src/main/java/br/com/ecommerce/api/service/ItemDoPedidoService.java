@@ -19,4 +19,8 @@ public class ItemDoPedidoService {
     public List<ItemDoPedido> listarTodos() {
         return itemDoPedidoRepository.findAll();
     }
+
+    public ItemDoPedido cadastrarItem(ItemDoPedido item) {
+        return itemDoPedidoRepository.save(item);
+    }
 }

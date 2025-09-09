@@ -23,4 +23,10 @@ public class ClienteService {
         return clienteRepository.findAll();
     }
 
+    //INSERT INTO ..    método de cadastrar
+    public Cliente cadastrarCliente (Cliente cl) {
+
+        return clienteRepository.save(cl);
+    }
+
 }
