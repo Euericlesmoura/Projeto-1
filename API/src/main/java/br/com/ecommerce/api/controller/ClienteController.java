@@ -27,7 +27,7 @@ public class ClienteController {
         return ResponseEntity.ok(clientes);
     }
 
-
+    //Cadastrar
     @PostMapping
     public ResponseEntity<Cliente> cadastrarCliente (@RequestBody Cliente cliente) {
 
@@ -39,6 +39,44 @@ public class ClienteController {
 
         //Codigo 201 - CREATED
         return ResponseEntity.status(HttpStatus.CREATED).body(cliente);
+    }
+
+
+    //Buscar
+    //Path Variable recebe um valor no LINK
+    @GetMapping("/{id}")
+    public ResponseEntity<?> buscarClientePorId(@PathVariable Integer id) {
+
+        //1. Procurar e guardar o Cliente
+        Cliente cliente = clienteService.buscarPorId(id);
+
+        //2. Se não encontrar, retornar erro
+        if (cliente == null) {
+            //Forma de retorno mais simples
+            //return ResponseEntity.notFound().build();
+
+            //Forma de retorno personalizada
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente " + id + " não encontrado !");
+        }
+
+        //3. Se encontrar, retornar o cliente
+        return ResponseEntity.ok(cliente);
+    }
+
+    //Deletar
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deletarClientePorId(@PathVariable Integer id) {
+
+        //1. Verificar se o cliente existe
+        Cliente cliente = clienteService.deletarCliente(id);
+
+        //2. Se não existir, retornar nulo
+        if (cliente == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente " + id + " não encontrado !");
+        }
+
+        //3. Se existir, excluo
+        return ResponseEntity.ok(cliente);
     }
 
 }

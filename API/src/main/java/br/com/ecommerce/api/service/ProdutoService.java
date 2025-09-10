@@ -28,4 +28,9 @@ public class ProdutoService {
 
         return produtoRepository.save(prod);
     }
+
+    //Metodo Buscar
+    public Produto buscarPorId (Integer id) {
+        return produtoRepository.findById(id).orElse(null);
+    }
 }

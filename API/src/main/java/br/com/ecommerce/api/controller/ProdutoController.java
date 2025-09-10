@@ -1,7 +1,6 @@
 package br.com.ecommerce.api.controller;
 
 import br.com.ecommerce.api.model.Produto;
-import br.com.ecommerce.api.repository.ProdutoRepository;
 import br.com.ecommerce.api.service.ProdutoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,11 +28,23 @@ public class ProdutoController {
         return ResponseEntity.ok(produto);
     }
 
-    @PostMapping
-    public ResponseEntity<Produto> cadastrarProduto (@RequestBody Produto produto) {
+    //Buscar
+    @GetMapping("/{id}")
+    public ResponseEntity<?> buscarProdutoPorId(@PathVariable Integer id) {
 
-        produtoService.cadastrarProduto(produto);
+        //1. Procurar e guardar Produto
+        Produto produto = produtoService.buscarPorId(id);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(produto);
+        //2. Se não encontrar, retornar erro
+        if (produto == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente " + id + " não encontrado !");
+        }
+
+        //3. Se encontrar, retornar Produto
+        return ResponseEntity.ok(produto);
     }
+
+    //Deletar
+
+
 }
