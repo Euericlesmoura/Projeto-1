@@ -20,6 +20,7 @@ public class PedidoController {
         pedidoService = pedido;
     }
 
+    //Metodo Listar
     @GetMapping
     public ResponseEntity<List<Pedido>> listarPedidos() {
 
@@ -27,10 +28,43 @@ public class PedidoController {
         return ResponseEntity.ok(pedido);
     }
 
+    //Metodo Cadastrar
     @PostMapping
     public ResponseEntity<Pedido> cadastrarPedido(@RequestBody Pedido pedido) {
 
         pedidoService.cadastrarPedido(pedido);
         return ResponseEntity.status(HttpStatus.CREATED).body(pedido);
+    }
+
+    //Metodo Buscar
+    @GetMapping("/{id}")
+    public ResponseEntity<?> buscarPedidoPorId(@PathVariable Integer id) {
+
+        //1. Procurar e guardar o Cliente
+        Pedido pedido = pedidoService.buscarPedidoPorId(id);
+
+        //2. Se não encontrar, retornar erro
+        if (pedido == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        //3. Se encontrar, retornar o cliente
+        return ResponseEntity.ok(pedido);
+    }
+
+    //Metodo Deletar
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deletarPedidoPorId(@PathVariable Integer id) {
+
+        //1. Verificar se o cliente existe
+        Pedido pedido = pedidoService.deletarPedido(id);
+
+        //2. Se não existir, retornar nulo
+        if (pedido == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Pedido " + id + " não encontrado !");
+        }
+
+        //3. Se existir, excluo
+        return ResponseEntity.ok(pedido);
     }
 }

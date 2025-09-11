@@ -33,4 +33,20 @@ public class ProdutoService {
     public Produto buscarPorId (Integer id) {
         return produtoRepository.findById(id).orElse(null);
     }
+
+    //Metodo Deletar
+    public Produto deletarProduto (Integer id) {
+
+        //1. Verificar se o cliente existe
+        Produto produto = buscarPorId(id);
+
+        //2. Se não existir, retornar nulo
+        if (produto == null) {
+            return null;
+        }
+
+        //3. Se existir, excluo
+        produtoRepository.delete(produto);
+        return produto;
+    }
 }

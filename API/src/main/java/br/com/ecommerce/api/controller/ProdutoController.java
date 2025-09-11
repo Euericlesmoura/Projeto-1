@@ -28,6 +28,17 @@ public class ProdutoController {
         return ResponseEntity.ok(produto);
     }
 
+    //Cadastrar
+    @PostMapping
+    public ResponseEntity<Produto> cadastrarProduto (@RequestBody Produto produto) {
+
+        //1. Tentar cadastrar o cliente
+        produtoService.cadastrarProduto(produto);
+
+        //Codigo 201 - CREATED
+        return ResponseEntity.status(HttpStatus.CREATED).body(produto);
+    }
+
     //Buscar
     @GetMapping("/{id}")
     public ResponseEntity<?> buscarProdutoPorId(@PathVariable Integer id) {
@@ -37,7 +48,7 @@ public class ProdutoController {
 
         //2. Se não encontrar, retornar erro
         if (produto == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente " + id + " não encontrado !");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Produto " + id + " não encontrado !");
         }
 
         //3. Se encontrar, retornar Produto
@@ -45,6 +56,19 @@ public class ProdutoController {
     }
 
     //Deletar
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deletarProdutoPorId(@PathVariable Integer id) {
 
+        //1. Verificar se o cliente existe
+        Produto produto = produtoService.deletarProduto(id);
+
+        //2. Se não existir, retornar nulo
+        if (produto == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente " + id + " não encontrado !");
+        }
+
+        //3. Se existir, excluo
+        return ResponseEntity.ok(produto);
+    }
 
 }

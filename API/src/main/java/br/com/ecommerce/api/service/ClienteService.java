@@ -50,4 +50,24 @@ public class ClienteService {
         return cliente;
     }
 
+    //Metodo Atualizar
+    public Cliente atualizarCliente (Integer id, Cliente clienteNovo) {
+
+        //1. Procurar quem eu quero atualizar
+        Cliente clienteAntigo = buscarPorId(id);
+
+        //2. Se eu não encontrar, retorno nulo
+        if (clienteAntigo == null) {
+            return null;
+        }
+
+        //3. Se eu achar, eu atualizo
+        clienteAntigo.setDataCadastro(clienteNovo.getDataCadastro());
+        clienteAntigo.setSenha(clienteNovo.getSenha());
+        clienteAntigo.setEmail(clienteNovo.getEmail());
+        clienteAntigo.setNomeCompleto(clienteNovo.getNomeCompleto());
+        clienteAntigo.setTelefone(clienteNovo.getTelefone());
+        return clienteRepository.save(clienteAntigo);
+    }
+
 }
