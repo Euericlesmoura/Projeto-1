@@ -1,5 +1,6 @@
 package br.com.ecommerce.api.controller;
 
+import br.com.ecommerce.api.model.Cliente;
 import br.com.ecommerce.api.model.EnderecoDeEntrega;
 import br.com.ecommerce.api.service.EnderecoDeEntregaService;
 import org.springframework.http.HttpStatus;
@@ -32,5 +33,41 @@ public class EnderecoDeEntregaController {
 
         enderecoDeEntregaService.cadastrarEnderecoDeEntrega(end);
         return ResponseEntity.status(HttpStatus.CREATED).body(end);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> buscarEnderecoDeEntregaPorId(@PathVariable Integer id) {
+
+        EnderecoDeEntrega endereco = enderecoDeEntregaService.buscarPorId(id);
+
+        if (endereco == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(endereco);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deletarEnderecoDeEntregaPorId(@PathVariable Integer id) {
+
+        EnderecoDeEntrega endereco = enderecoDeEntregaService.deletarEndereco(id);
+
+        if (endereco == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Endereco " + id + " não encontrado !");
+        }
+
+        return ResponseEntity.ok(endereco);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> atualizarEnderecoDeEntrega (@PathVariable Integer id, @RequestBody EnderecoDeEntrega enderecoNovo) {
+
+        EnderecoDeEntrega end = enderecoDeEntregaService.atualizarEndereco(id, enderecoNovo);
+
+        if (end == null) {
+            return ResponseEntity.status(404).body("Endereco não encontrado !");
+        }
+
+        return ResponseEntity.ok(end);
     }
 }

@@ -1,5 +1,6 @@
 package br.com.ecommerce.api.service;
 
+import br.com.ecommerce.api.model.Cliente;
 import br.com.ecommerce.api.model.Pedido;
 import br.com.ecommerce.api.repository.PedidoRepository;
 import org.springframework.stereotype.Service;
@@ -46,5 +47,23 @@ public class PedidoService {
         //3. Se existir, excluo
         pedidoRepository.delete(pedido);
         return pedido;
+    }
+
+    //Metodo Atualizar
+    public Pedido atualizarPedido (Integer id, Pedido pedido) {
+
+        //1. Procurar quem eu quero atualizar
+        Pedido pedidoAntigo = buscarPedidoPorId(id);
+
+        //2. Se eu não encontrar, retorno nulo
+        if (pedidoAntigo == null) {
+            return null;
+        }
+
+        //3. Se eu achar, eu atualizo
+        pedidoAntigo.setDataPedido(pedido.getDataPedido());
+        pedidoAntigo.setStatus(pedido.getStatus());
+        pedidoAntigo.setValorTotal(pedido.getValorTotal());
+        return pedidoRepository.save(pedidoAntigo);
     }
 }

@@ -49,4 +49,24 @@ public class ProdutoService {
         produtoRepository.delete(produto);
         return produto;
     }
+
+    //Metodo Atualizar
+    public Produto atualizarProduto (Integer id, Produto produtoNovo) {
+
+        //1. Procurar quem eu quero atualizar
+        Produto produtoAntigo = buscarPorId(id);
+
+        //2. Se eu não encontrar, retorno nulo
+        if (produtoAntigo == null) {
+            return null;
+        }
+
+        //3. Se eu achar, eu atualizo
+        produtoAntigo.setNomeProduto(produtoNovo.getNomeProduto());
+        produtoAntigo.setDescricao(produtoNovo.getDescricao());
+        produtoAntigo.setPreco(produtoNovo.getPreco());
+        produtoAntigo.setEstoqueDisponivel(produtoNovo.getEstoqueDisponivel());
+        produtoAntigo.setImagemUrl(produtoNovo.getImagemUrl());
+        return produtoRepository.save(produtoAntigo);
+    }
 }

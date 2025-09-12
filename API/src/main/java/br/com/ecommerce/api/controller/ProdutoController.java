@@ -1,5 +1,6 @@
 package br.com.ecommerce.api.controller;
 
+import br.com.ecommerce.api.model.Cliente;
 import br.com.ecommerce.api.model.Produto;
 import br.com.ecommerce.api.service.ProdutoService;
 import org.springframework.http.HttpStatus;
@@ -69,6 +70,22 @@ public class ProdutoController {
 
         //3. Se existir, excluo
         return ResponseEntity.ok(produto);
+    }
+
+    //Metodo Atualizar
+    @PutMapping("/{id}")
+    public ResponseEntity<?> atualizarProduto(@PathVariable Integer id, @RequestBody Produto produtoNovo) {
+
+        //1. Tento atualizar o Cliente
+        Produto prod = produtoService.atualizarProduto(id, produtoNovo);
+
+        //2. Se não achar o Cliente, mostro erro
+        if (prod == null) {
+            return ResponseEntity.status(404).body("Produto não encontrado !");
+        }
+
+        //3. Se achar, retorno ok
+        return ResponseEntity.ok(prod);
     }
 
 }

@@ -25,7 +25,6 @@ public class ClienteService {
 
     //INSERT INTO ..    método de cadastrar
     public Cliente cadastrarCliente (Cliente cl) {
-
         return clienteRepository.save(cl);
     }
 

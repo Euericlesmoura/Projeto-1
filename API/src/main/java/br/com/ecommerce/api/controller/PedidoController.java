@@ -1,5 +1,6 @@
 package br.com.ecommerce.api.controller;
 
+import br.com.ecommerce.api.model.Cliente;
 import br.com.ecommerce.api.model.Pedido;
 import br.com.ecommerce.api.service.PedidoService;
 import org.springframework.http.HttpStatus;
@@ -66,5 +67,21 @@ public class PedidoController {
 
         //3. Se existir, excluo
         return ResponseEntity.ok(pedido);
+    }
+
+    //Metodo Atualizar
+    @PutMapping("/{id}")
+    public ResponseEntity<?> atualizarPedido(@PathVariable Integer id, @RequestBody Pedido pedidoNovo) {
+
+        //1. Tento atualizar o Cliente
+        Pedido pd = pedidoService.atualizarPedido(id, pedidoNovo);
+
+        //2. Se não achar o Cliente, mostro erro
+        if (pd == null) {
+            return ResponseEntity.status(404).body("Pedido não encontrado !");
+        }
+
+        //3. Se achar, retorno ok
+        return ResponseEntity.ok(pd);
     }
 }
